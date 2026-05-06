@@ -1,33 +1,29 @@
-type Inventory = {
-  id: string
-  name: string
-}
+'use client'
 
-async function getInventories(): Promise<Inventory[]> {
-  // fake data (API later replace করবে)
-  return [
-    { id: '1', name: 'Product 1' },
-    { id: '2', name: 'Product 2' },
-  ]
-}
+import { useRouter, useParams } from 'next/navigation'
 
-export default async function InventoriesPage() {
-  const inventories = await getInventories()
+export default function DeleteInventoryPage() {
+  const router = useRouter()
+  const params = useParams()
+
+  const inventoryId = params.inventoryId as string
+
+  const handleDelete = async () => {
+    await fetch(`/api/inventories/${inventoryId}`, {
+      method: 'DELETE',
+    })
+
+    router.push('/dashboard/inventories')
+  }
 
   return (
     <div>
-      <h1>Inventories</h1>
+      <h1>Delete Inventory</h1>
+      <p>ID: {inventoryId}</p>
 
-      <ul>
-        {inventories.map((item) => (
-          <li key={item.id}>
-            {item.name} - 
-            <a href={`/dashboard/inventories/delete/${item.id}`}>
-              Delete
-            </a>
-          </li>
-        ))}
-      </ul>
+      <button onClick={handleDelete}>
+        Confirm Delete
+      </button>
     </div>
   )
 }
