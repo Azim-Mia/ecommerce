@@ -1,22 +1,33 @@
-'use client'
+type Product = {
+  id: string
+  name: string
+}
 
-import { useRouter } from 'next/navigation'
+async function getProducts(): Promise<Product[]> {
+  // fake data (API later replace করবে)
+  return [
+    { id: '1', name: 'Product 1' },
+    { id: '2', name: 'Product 2' },
+  ]
+}
 
-export default function DeleteInventoryPage({ params }: { params: { id: string } }) {
-  const router = useRouter()
-
-  const handleDelete = async () => {
-    await fetch(`/api/inventories/${params.id}`, {
-      method: 'DELETE'
-    })
-
-    router.push('/dashboard/inventories')
-  }
+export default async function ProductsPage() {
+  const products = await getProducts()
 
   return (
     <div>
-      <h1>Delete Inventory {params.id}</h1>
-      <button onClick={handleDelete}>Confirm Delete</button>
+      <h1>products</h1>
+
+      <ul>
+        {products.map((item) => (
+          <li key={item.id}>
+            {item.name} - 
+            <a href={`/dashboard/products/edid/${item.id}`}>
+              Edid
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
