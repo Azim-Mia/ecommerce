@@ -5,4 +5,4 @@ const Inventories = () =>{
    </div>
   );
 }
-export default <In></In>
+export default Inventories
