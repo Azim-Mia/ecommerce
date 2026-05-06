@@ -1,12 +1,13 @@
 'use client'
 
-import { useRouter, useParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 export default function DeleteInventoryPage() {
   const router = useRouter()
-  const params = useParams()
 
-  const inventoryId = params.inventoryId as string
+  // 🔥 static inventory
+  const inventoryId = '1'
+  const name = 'Product 1'
 
   const handleDelete = async () => {
     await fetch(`/api/inventories/${inventoryId}`, {
@@ -19,7 +20,9 @@ export default function DeleteInventoryPage() {
   return (
     <div>
       <h1>Delete Inventory</h1>
+
       <p>ID: {inventoryId}</p>
+      <p>Name: {name}</p>
 
       <button onClick={handleDelete}>
         Confirm Delete
