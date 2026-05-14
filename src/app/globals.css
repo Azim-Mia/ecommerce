@@ -23,4 +23,25 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} 
+.animation{
+  border: 0px;
+  margin-top: 0.5rem;
+}
+.animation:hover{
+  border-bottom: 1px ;
+  transition-duration: 2s;
+  transform: translateX(20px);
+}
+.logoAnimation{
+animation-duration:inifinite;
+animation-name: logoSlide
+}
+@keyframes logoSlide{
+  from {
+transform: rotate(360deg);
+  }
+  to {
+color: yellow;
+  }
 }
