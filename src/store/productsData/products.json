@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Wireless Headphone",
+    "price": 2500,
+    "category": "Electronics",
+    "brand": "Sony",
+    "stock": 15,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    "description": "High quality wireless headphone with noise cancellation."
+  },
+  {
+    "id": 2,
+    "title": "Gaming Mouse",
+    "price": 1200,
+    "category": "Accessories",
+    "brand": "Logitech",
+    "stock": 20,
+    "rating": 4.3,
+    "thumbnail": "https://images.unsplash.com/photo-1527814050087-3793815479db",
+    "description": "RGB gaming mouse with fast response."
+  },
+  {
+    "id": 3,
+    "title": "Smart Watch",
+    "price": 3500,
+    "category": "Gadgets",
+    "brand": "Apple",
+    "stock": 10,
+    "rating": 4.8,
+    "thumbnail": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d",
+    "description": "Modern smart watch with health tracking."
+  },
+  {
+    "id": 4,
+    "title": "Laptop Backpack",
+    "price": 1800,
+    "category": "Fashion",
+    "brand": "Nike",
+    "stock": 12,
+    "rating": 4.2,
+    "thumbnail": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "description": "Stylish backpack for laptop and travel."
+  }
+]

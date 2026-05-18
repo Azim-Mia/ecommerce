@@ -14,7 +14,7 @@ const Navbar = ()=>{
   <div className={`md:hidden fixed rounded top-0 h-96 w-48 mt-16 bg-black round:md text-white transition-transform duration-400 ${open ? "translate-x-0"
   :"-translate-x-full"}`}>
 
-    {/*close slide button*/}
+    {/*close-slide button*/}
 <button onClick={()=>setOpen(false)} className="w-41 flex mt-2 justify-end">close</button>
   
    {/*mobile menu list*/}
@@ -29,8 +29,10 @@ const Navbar = ()=>{
 
 {/*Desktop menu */}
 {/*left side */}
-
- <div className="flex justify-center items-center px-4 logoAnimation">logo</div>
+{/*logo company */}
+ <div className="flex justify-center items-center px-4 pt-2 logoAnimation">
+  Sale BD
+  </div>
 
  {/*middle side */}
   <ul className="hidden md:flex text-[1.5rem] items-center gap-8">
