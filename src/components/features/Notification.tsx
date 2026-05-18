@@ -98,7 +98,7 @@ const Notification = () => {
         {/* Footer */}
         <div className="p-3 text-center">
           <button className="text-sm font-semibold text-pink-500 hover:underline">
-            View All Notifications
+            Views All Notifications
           </button>
         </div>
       </div>
