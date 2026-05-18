@@ -2,6 +2,9 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import UserSettings from "../features/UserSettings"
+import CartModal from "../features/CartModal"
+import Notification from '../features/Notification'
 const Navbar = ()=>{
   const [open, setOpen] =useState(false)
   return (<nav className="flex bg-pink-200 h-16 text-[1.5rem] justify-between m-0 border-0">
@@ -45,14 +48,12 @@ const Navbar = ()=>{
     {/*Right swction */}
   <section className="flex items-center gap-8 mr-8">
     <div>
-      <Image src={'/images/icons/notification.png'} alt="cart" width={20} height={20} />
+   <Notification/>
     </div>
-     <div>
-      <Image src={'/images/icons/cart_2.png'} alt="cart" width={20} height={20} />
-     </div>
+   <div className=""><CartModal /></div>
       <div>
-        <Image src={'/images/avatars/azim.jpg'} alt="cart" width={20} height={20} className="rounded-full" />
-      </div>
+        <UserSettings />
+     </div>
   </section>
   </nav>)
 }
