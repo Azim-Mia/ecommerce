@@ -6,7 +6,7 @@ export default async function HomePage() {
 
   return (<>
 <ProductSlider />
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen w-full bg-gray-100">
       <DisplayProducts data={products} />
     </main>
   </>);

@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full w-full antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
 
-        <header className="sticky top-0 z-[1000] w-full">
+        <header className="sticky top-0 z-[1000]">
           <Navbar />
         </header>
 

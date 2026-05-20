@@ -10,16 +10,81 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-   <nav className="flex min-w-full h-16 items-center justify-between bg-pink-200 px-2 md:px-8">
-      {/* MOBILE MENU ICON */}
-      <div
-        onClick={() => setOpen(true)}
-        className="flex flex-col gap-1 md:hidden cursor-pointer"
-      >
-        <div className="h-[2px] w-7 bg-black"></div>
-        <div className="h-[2px] w-7 bg-black"></div>
-        <div className="h-[2px] w-7 bg-black"></div>
-      </div>
+    <>
+      <nav className="w-full border-b bg-pink-200">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-3 sm:px-5 md:px-8">
+          
+          {/* LEFT */}
+          <div className="flex items-center gap-4">
+            
+            {/* MOBILE MENU */}
+            <button
+              onClick={() => setOpen(true)}
+              className="flex flex-col gap-1 md:hidden"
+            >
+              <div className="h-[2px] w-6 bg-black"></div>
+              <div className="h-[2px] w-6 bg-black"></div>
+              <div className="h-[2px] w-6 bg-black"></div>
+            </button>
+
+            {/* LOGO */}
+            <Link
+              href="/"
+              className="text-lg font-bold tracking-wide sm:text-xl"
+            >
+              Sale BD
+            </Link>
+          </div>
+
+          {/* DESKTOP MENU */}
+          <ul className="hidden items-center gap-6 lg:gap-10 md:flex">
+            <li>
+              <Link href="/home" className="hover:text-pink-600 transition">
+                Men
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/home" className="hover:text-pink-600 transition">
+                Women
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/home" className="hover:text-pink-600 transition">
+                Child
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/home" className="hover:text-pink-600 transition">
+                Toy
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/home" className="hover:text-pink-600 transition">
+                Other
+              </Link>
+            </li>
+          </ul>
+
+          {/* RIGHT */}
+          <section className="flex items-center gap-2 sm:gap-4 md:gap-6">
+            <Notification />
+            <CartModal />
+            <UserSettings />
+          </section>
+        </div>
+      </nav>
+
+      {/* OVERLAY */}
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-40 bg-black/40 md:hidden"
+        />
+      )}
 
       {/* MOBILE DRAWER */}
       <div
@@ -30,65 +95,69 @@ const Navbar = () => {
         `}
       >
         {/* CLOSE BUTTON */}
-        <div className="flex justify-end p-3">
+        <div className="flex justify-end p-4">
           <button
             onClick={() => setOpen(false)}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md transition hover:bg-red-500 hover:text-white hover:rotate-90"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black transition hover:rotate-90 hover:bg-red-500 hover:text-white"
           >
             ✕
           </button>
         </div>
 
-        {/* MENU LIST */}
-        <ul className="mt-6 flex flex-col items-center gap-6 text-lg">
+        {/* MOBILE MENU */}
+        <ul className="mt-10 flex flex-col items-center gap-7 text-lg font-medium">
           <li>
-            <Link href="/home" onClick={() => setOpen(false)} className="hover:text-pink-400">
+            <Link
+              href="/home"
+              onClick={() => setOpen(false)}
+              className="hover:text-pink-400"
+            >
               Men
             </Link>
           </li>
+
           <li>
-            <Link href="/home" onClick={() => setOpen(false)} className="hover:text-pink-400">
+            <Link
+              href="/home"
+              onClick={() => setOpen(false)}
+              className="hover:text-pink-400"
+            >
               Women
             </Link>
           </li>
+
           <li>
-            <Link href="/home" onClick={() => setOpen(false)} className="hover:text-pink-400">
+            <Link
+              href="/home"
+              onClick={() => setOpen(false)}
+              className="hover:text-pink-400"
+            >
               Child
             </Link>
           </li>
+
           <li>
-            <Link href="/home" onClick={() => setOpen(false)} className="hover:text-pink-400">
+            <Link
+              href="/home"
+              onClick={() => setOpen(false)}
+              className="hover:text-pink-400"
+            >
               Toy
             </Link>
           </li>
+
           <li>
-            <Link href="/home" onClick={() => setOpen(false)} className="hover:text-pink-400">
+            <Link
+              href="/home"
+              onClick={() => setOpen(false)}
+              className="hover:text-pink-400"
+            >
               Other
             </Link>
           </li>
         </ul>
       </div>
-
-      {/* LOGO */}
-      <div className="logoAnimation text-xl font-bold">
-        Sale BD
-      </div>
-
-      {/* DESKTOP MENU */}
-      <ul className="hidden items-center gap-8 md:flex">
-        <li><Link href="/home" className="hover:underline">Men</Link></li>
-        <li><Link href="/home" className="hover:underline">Women</Link></li>
-        <li><Link href="/home" className="hover:underline">Child</Link></li>
-        <li><Link href="/home" className="hover:underline">Other</Link></li>
-      </ul>
-
-      {/* RIGHT SECTION */}
-      <section className="flex pr-4 justify-center items-center gap-2 md:gap-8">
-        <Notification />
-        <CartModal />
-          <UserSettings />
-      </section>
-    </nav>
+    </>
   );
 };
 
