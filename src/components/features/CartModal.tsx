@@ -156,8 +156,12 @@ const CartModal = () => {
 
         {/* ITEMS (ONLY SCROLL AREA) */}
         <div className="flex-1 overflow-y-auto space-y-4 p-4">
-             {cartItems.length == 0 && <span className="flex justify-center items-center text-[60px]">
-              product is empty</span>}
+           
+     {cartItems.length === 0 && (
+  <span className="flex items-center justify-center text-2xl md:text-5xl font-semibold py-10">
+    Product is empty
+  </span>
+)}
           {cartItems.map((item) => (
             <div
               key={item.id}
