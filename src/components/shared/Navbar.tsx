@@ -12,10 +12,10 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-pink-200">
+      <nav className="sticky top-0 z-50 min-w-full border-b bg-pink-200">
         
         {/* CONTAINER */}
-        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className=" min-w-full mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
           {/* LEFT SIDE */}
           <div className="flex items-center gap-3">

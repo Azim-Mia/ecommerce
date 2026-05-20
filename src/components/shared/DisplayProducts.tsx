@@ -35,6 +35,7 @@ const Products = ({ data }: ProductsProps) => {
 
       {/* GRID */}
       <div className="
+        min-w-full
         grid 
         grid-cols-1 
         gap-5 
