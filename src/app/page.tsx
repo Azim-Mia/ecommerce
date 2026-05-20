@@ -9,12 +9,12 @@ export default async function HomePage() {
     <main className="min-h-screen w-full overflow-x-hidden bg-gray-100">
 
       {/* SLIDER */}
-      <section className="w-full">
+      <section className="min-w-full">
         <ProductSlider />
       </section>
 
       {/* PRODUCTS SECTION */}
-      <section className="w-full px-3 sm:px-5 md:px-8 lg:px-12 xl:px-16 py-6 md:py-10">
+      <section className="min-w-full px-3 sm:px-5 md:px-8 lg:px-12 xl:px-16 py-6 md:py-10">
 
         {/* HEADER */}
         <div className="mb-6 md:mb-10">
@@ -28,7 +28,7 @@ export default async function HomePage() {
         </div>
 
         {/* GRID WRAPPER */}
-        <div className="w-full">
+        <div className="min-w-full">
           <DisplayProducts data={products} />
         </div>
 

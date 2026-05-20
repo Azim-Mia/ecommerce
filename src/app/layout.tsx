@@ -34,11 +34,11 @@ export default function RootLayout({
           <Navbar />
         </header>
 
-        <main className="flex-1">
+        <main className="flex-1 min-w-full">
           {children}
         </main>
 
-        <footer className="text-center py-4 text-sm bg-gray-100 dark:bg-gray-900">
+        <footer className="min-w-full text-center py-4 text-sm bg-gray-100 dark:bg-gray-900">
           © {new Date().getFullYear()} Sale BD
         </footer>
 
