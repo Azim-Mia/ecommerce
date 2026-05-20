@@ -10,7 +10,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="flex h-16 w-auto px-8 items-center justify-between bg-pink-200 px-4 md:px-8">
+    <nav className="flex h-16 w-auto items-center justify-between items-center bg-pink-200 px-2 md:px-8">
 
       {/* MOBILE MENU ICON */}
       <div
@@ -84,7 +84,7 @@ const Navbar = () => {
       </ul>
 
       {/* RIGHT SECTION */}
-      <section className="flex px-4 items-center gap-6">
+      <section className="flex pr-4 justify-center items-center gap-6 sm:gap-4">
         <Notification />
         <CartModal />
           <UserSettings />

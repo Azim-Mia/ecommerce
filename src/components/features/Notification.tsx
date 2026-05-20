@@ -80,7 +80,7 @@ const Notification = () => {
       {/* Notification Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="group relative flex h-11 w-11 items-center justify-center rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg active:scale-95"
+        className="group relative flex h-10 w-10 items-center justify-center rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg active:scale-95"
       >
         <Image
           src={"/images/icons/notification.png"}

@@ -100,15 +100,15 @@ const CartModal = () => {
         onClick={() => setOpen(!open)}
         className="group relative rounded-full p-2.5 transition hover:bg-pink-100"
       >
-        <Image
-          src="/images/icons/cart_2.png"
-          alt="cart"
-          width={26}
-          height={26}
-          className="transition-transform duration-300 group-hover:scale-110"
-        />
+           <Image
+                  src={"/images/icons/cart_2.png"}
+                  alt="cart"
+                  width={30}
+                  height={30}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
 
-        <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-500 text-[10px] font-bold text-white">
+        <span className="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-pink-500 text-[10px] font-bold text-white">
           {totalItems}
         </span>
       </button>
