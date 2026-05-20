@@ -10,8 +10,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="flex h-16 w-auto items-center justify-between items-center bg-pink-200 px-2 md:px-8">
-
+   <nav className="flex min-w-full h-16 items-center justify-between bg-pink-200 px-2 md:px-8">
       {/* MOBILE MENU ICON */}
       <div
         onClick={() => setOpen(true)}

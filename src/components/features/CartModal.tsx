@@ -124,7 +124,7 @@ const CartModal = () => {
           fixed right-0 top-0 z-50 flex h-screen w-full flex-col bg-white transition-all duration-300
 
           md:absolute md:top-14 md:right-0
-          md:h-[90vh] md:w-[420px]
+          md:h-[30rem] md:w-[420px]
           md:rounded-3xl md:border md:border-gray-100 md:shadow-xl
           md:flex md:flex-col
 
