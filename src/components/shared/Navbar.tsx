@@ -84,7 +84,7 @@ const Navbar = () => {
       </ul>
 
       {/* RIGHT SECTION */}
-      <section className="flex pr-4 justify-center items-center gap-6 sm:gap-4">
+      <section className="flex pr-4 justify-center items-center gap-2 md:gap-8">
         <Notification />
         <CartModal />
           <UserSettings />
