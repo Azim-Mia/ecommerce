@@ -8,13 +8,13 @@ export default async function HomePage() {
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-gray-100">
       
-      {/* SLIDER */}
+      {/* SLIDER FULL WIDTH */}
       <section className="w-full">
         <ProductSlider />
       </section>
 
-      {/* PRODUCTS */}
-      <section className="mx-auto w-full max-w-7xl px-3 py-6 sm:px-5 md:px-6 lg:px-8">
+      {/* PRODUCTS FULL WIDTH */}
+      <section className="w-full px-3 py-6 sm:px-5 md:px-8 lg:px-12">
         
         {/* TITLE */}
         <div className="mb-6">
