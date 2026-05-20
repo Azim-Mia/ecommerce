@@ -120,8 +120,7 @@ const CartModal = () => {
 
       {/* MODAL */}
       <div
-        className={`
-          mx-8 p-4
+        className={`p-4
           fixed right-0 top-0 z-50 flex h-screen w-full flex-col bg-white transition-all duration-300
 
           md:absolute md:top-14 md:right-0
