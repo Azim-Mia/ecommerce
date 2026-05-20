@@ -1,17 +1,16 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* =========================
+   ROOT VARIABLES
+========================= */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,18 +18,66 @@
   }
 }
 
+/* =========================
+   BASE STYLES
+========================= */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-} 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: #ec4899;
+  color: white;
+}
+
+/* =========================
+   SCROLLBAR (Optional nice UI)
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ec4899;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #db2777;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+/* Logo Gradient Animation */
 .logoAnimation {
   display: inline-block;
   font-weight: 800;
   font-size: 1.6rem;
   letter-spacing: 1.2px;
 
-  /* Gradient Text */
   background: linear-gradient(
     90deg,
     #ec4899,
@@ -38,20 +85,20 @@ body {
     #3b82f6,
     #ec4899
   );
+
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
-  /* Smooth animation */
   animation: gradientFlow 5s ease infinite;
 
-  /* Performance */
   will-change: background-position, transform;
   transition: transform 0.3s ease;
+  transform: translateZ(0);
 }
 
-/* Premium animation */
+/* Gradient Animation */
 @keyframes gradientFlow {
   0% {
     background-position: 0% 50%;
@@ -64,8 +111,43 @@ body {
   }
 }
 
-/* Hover micro interaction */
+/* Hover effect */
 .logoAnimation:hover {
   transform: translateY(-2px) scale(1.03);
   filter: drop-shadow(0 6px 15px rgba(236, 72, 153, 0.3));
+}
+
+/* =========================
+   REUSABLE UI HELPERS
+========================= */
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Button active animation */
+.btn-active:active {
+  transform: scale(0.95);
+}
+
+/* Fade animation */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

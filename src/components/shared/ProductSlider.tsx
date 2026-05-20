@@ -35,7 +35,7 @@ const ProductSlider: React.FC = () => {
 
   return (
     <div
-      className="relative h-[520px] w-full overflow-hidden rounded-3xl bg-black group"
+      className="relative h-[520px] w-full overflow-hidden rounded-3xl bg-black group "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -50,8 +50,8 @@ const ProductSlider: React.FC = () => {
         >
           <Image
             src={img}
+             fill
             alt="product"
-            fill
             priority={index === 0}
             className="object-cover scale-105"
           />
@@ -62,7 +62,7 @@ const ProductSlider: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
 
       {/* LEFT CONTENT (PRO HERO STYLE) */}
-      <div className="absolute inset-0 flex items-center px-16">
+      <div className="hidden md:block absolute inset-0 flex items-center px-16">
         <div className="max-w-lg text-white space-y-5">
 
           <h1 className="text-5xl font-extrabold leading-tight">
