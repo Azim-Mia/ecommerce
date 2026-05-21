@@ -28,17 +28,17 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen min-w-full flex flex-col bg-white dark:bg-gray-950">
+      <body className="min-h-screen flex flex-col bg-white dark:bg-gray-950 overflow-x-hidden">
 
         <header className="sticky top-0 z-[1000] w-full">
           <Navbar />
         </header>
 
-        <main className="flex-1 min-w-full">
+        <main className="flex-1 w-full">
           {children}
         </main>
 
-        <footer className="min-w-full text-center py-4 text-sm bg-gray-100 dark:bg-gray-900">
+        <footer className="w-full text-center py-4 text-sm bg-gray-100 dark:bg-gray-900">
           © {new Date().getFullYear()} Sale BD
         </footer>
 

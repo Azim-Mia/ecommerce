@@ -63,7 +63,7 @@ const ProductSlider: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
       {/* TEXT CONTENT (RESPONSIVE) */}
-      <div className="absolute inset-0 flex items-center px-4 sm:px-8 md:px-12 lg:px-16">
+      <div className="absolute inset-0 flex items-center px-4 sm:px-8 md:px-16 lg:px-full">
 
         <div className="max-w-xs sm:max-w-md md:max-w-lg text-white space-y-3 sm:space-y-4 md:space-y-5">
 

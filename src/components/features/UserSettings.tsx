@@ -107,14 +107,13 @@ const UserSettings = () => {
               
               {/* Avatar */}
               <div className="relative">
-                <Image
-                  src={"/images/avatars/azim.jpg"}
-                  alt="user"
-                  width={60}
-                  height={60}
-                  className="rounded-full border-2 border-white/40 object-cover"
-                />
-
+          <Image
+  src="/images/avatars/azim.jpg"
+  alt="user"
+  width={60}
+  height={60}
+  className="rounded-full border-2 border-white/40 object-cover"
+/>
                 <span className="absolute bottom-0 right-0 h-4 w-4 rounded-full border-2 border-white bg-green-400"></span>
               </div>
 
