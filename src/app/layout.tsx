@@ -13,35 +13,87 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+/* =========================
+   SEO METADATA
+========================= */
 export const metadata: Metadata = {
-  title: "Sale BD",
-  description: "Best E-commerce platform",
+  title: {
+    default: "Sale BD - Best Online Shopping in Bangladesh",
+    template: "%s | Sale BD",
+  },
+
+  description:
+    "Buy electronics, fashion, groceries and daily essentials at best price in Bangladesh.",
+
+  keywords: [
+    "ecommerce bangladesh",
+    "online shopping bd",
+    "sale bd",
+    "buy products online",
+  ],
+
+  metadataBase: new URL("https://salebd.com"),
+
+  openGraph: {
+    title: "Sale BD - Online Shopping",
+    description:
+      "Best ecommerce platform in Bangladesh for daily shopping needs.",
+    url: "https://salebd.com",
+    siteName: "Sale BD",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-white dark:bg-gray-950 overflow-x-hidden">
+      <body className="min-h-screen overflow-x-hidden bg-gray-50 text-gray-900 antialiased">
 
-        <header className="sticky top-0 z-[1000] w-full">
-          <Navbar />
-        </header>
+        {/* =========================
+            APP WRAPPER
+        ========================= */}
+        <div className="flex min-h-screen flex-col">
 
-        <main className="flex-1 w-full">
-          {children}
-        </main>
+          {/* =========================
+              HEADER
+          ========================= */}
+          <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur">
+            <div className="mx-auto w-full max-w-screen-xl px-3 sm:px-5 lg:px-8">
+              <Navbar />
+            </div>
+          </header>
 
-        <footer className="w-full text-center py-4 text-sm bg-gray-100 dark:bg-gray-900">
-          © {new Date().getFullYear()} Sale BD
-        </footer>
+          {/* =========================
+              MAIN CONTENT
+          ========================= */}
+          <main className="flex-1">
+            <div className="mx-auto w-full max-w-screen-xl px-3 py-5 sm:px-5 lg:px-8 lg:py-6">
+              {children}
+            </div>
+          </main>
 
+          {/* =========================
+              FOOTER
+          ========================= */}
+          <footer className="mt-auto w-full bg-gray-900 text-white">
+            <div className="mx-auto w-full max-w-screen-xl px-3 py-8 text-center text-sm sm:px-5 lg:px-8">
+              © {new Date().getFullYear()} Sale BD. All rights reserved.
+            </div>
+          </footer>
+
+        </div>
       </body>
     </html>
   );

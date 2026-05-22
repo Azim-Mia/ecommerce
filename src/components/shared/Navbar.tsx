@@ -2,97 +2,293 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import UserSettings from "../features/UserSettings";
-import CartModal from "../features/CartModal";
+
+import {
+  Menu,
+  X,
+  Search,
+} from "lucide-react";
+
+/* =========================
+   COMPONENTS
+========================= */
 import Notification from "../features/Notification";
+import CartModal from "../features/CartModal";
+import UserSettings from "../features/UserSettings";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 min-w-full border-b bg-pink-200">
-        
-        {/* CONTAINER */}
-        <div className=" min-w-full mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      {/* =========================
+          NAVBAR
+      ========================= */}
+      <nav className="flex h-16 w-full items-center justify-between gap-3">
 
-          {/* LEFT SIDE */}
-          <div className="flex items-center gap-3">
+        {/* =========================
+            LEFT SIDE
+        ========================= */}
+        <div className="flex items-center gap-3">
 
-            {/* MOBILE MENU BUTTON */}
-            <button
-              onClick={() => setOpen(true)}
-              className="flex flex-col gap-1 md:hidden"
-              aria-label="Open menu"
-            >
-              <span className="h-[2px] w-6 bg-black"></span>
-              <span className="h-[2px] w-6 bg-black"></span>
-              <span className="h-[2px] w-6 bg-black"></span>
-            </button>
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setOpen(true)}
+            className="
+              rounded-lg p-2
+              transition hover:bg-gray-100
+              md:hidden
+            "
+            aria-label="Open menu"
+          >
+            <Menu size={24} />
+          </button>
 
-            {/* LOGO */}
+          {/* LOGO */}
+          <Link
+            href="/"
+            className="
+              text-xl font-extrabold tracking-tight
+              text-pink-600
+              sm:text-2xl
+            "
+          >
+            Sale BD
+          </Link>
+        </div>
+
+        {/* =========================
+            DESKTOP MENU
+        ========================= */}
+        <ul
+          className="
+            hidden items-center
+            gap-5 text-sm font-medium
+            md:flex
+            lg:gap-8 lg:text-base
+          "
+        >
+          <li>
             <Link
-              href="/"
-              className="logoAnimation text-lg font-bold sm:text-xl"
+              href="/men"
+              className="transition hover:text-pink-600"
             >
-              Sale BD
+              Men
             </Link>
-          </div>
+          </li>
 
-          {/* DESKTOP MENU */}
-          <ul className="hidden items-center gap-6 md:flex lg:gap-10 text-base">
-            <li><Link href="#" className="hover:underline">Men</Link></li>
-            <li><Link href="#" className="hover:underline">Women</Link></li>
-            <li><Link href="#" className="hover:underline">Child</Link></li>
-            <li><Link href="#" className="hover:underline">Toy</Link></li>
-            <li><Link href="#" className="hover:underline">Other</Link></li>
-          </ul>
+          <li>
+            <Link
+              href="/women"
+              className="transition hover:text-pink-600"
+            >
+              Women
+            </Link>
+          </li>
 
-          {/* RIGHT SIDE */}
-          <div className="flex items-center gap-3 sm:gap-5 lg:gap-7">
-            <Notification />
-            <CartModal />
-            <UserSettings />
-          </div>
+          <li>
+            <Link
+              href="/child"
+              className="transition hover:text-pink-600"
+            >
+              Child
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/toy"
+              className="transition hover:text-pink-600"
+            >
+              Toy
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/other"
+              className="transition hover:text-pink-600"
+            >
+              Other
+            </Link>
+          </li>
+        </ul>
+
+        {/* =========================
+            RIGHT SIDE
+        ========================= */}
+        <div className="flex items-center gap-1 sm:gap-2">
+
+          {/* SEARCH */}
+          <button
+            className="
+              rounded-full p-2
+              transition hover:bg-gray-100
+            "
+            aria-label="Search"
+          >
+          </button>
+
+          {/* NOTIFICATION */}
+          <Notification />
+
+          {/* CART */}
+          <CartModal />
+
+          {/* USER SETTINGS */}
+          <UserSettings />
 
         </div>
       </nav>
 
-      {/* OVERLAY */}
+      {/* =========================
+          OVERLAY
+      ========================= */}
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 z-40 bg-black/40 md:hidden"
+          className="
+            fixed inset-0 z-40
+            bg-black/50 backdrop-blur-sm
+            md:hidden
+          "
         />
       )}
 
-      {/* MOBILE DRAWER */}
+      {/* =========================
+          MOBILE DRAWER
+      ========================= */}
       <aside
         className={`
-          fixed left-0 top-0 z-50 h-full w-64 bg-black text-white
-          transition-transform duration-300 md:hidden
+          fixed left-0 top-0 z-50
+          h-screen w-72
+          bg-white shadow-2xl
+          transition-transform duration-300
+          md:hidden
           ${open ? "translate-x-0" : "-translate-x-full"}
         `}
       >
-        {/* CLOSE BUTTON */}
-        <div className="flex justify-end p-4">
+
+        {/* TOP */}
+        <div className="flex items-center justify-between border-b p-4">
+
+          <h2 className="text-xl font-bold text-pink-600">
+            Sale BD
+          </h2>
+
           <button
             onClick={() => setOpen(false)}
-            className="text-2xl font-bold text-white"
+            className="
+              rounded-lg p-2
+              transition hover:bg-gray-100
+            "
+            aria-label="Close menu"
           >
-            ✕
+            <X size={24} />
           </button>
         </div>
 
         {/* MOBILE MENU */}
-        <ul className="mt-10 flex flex-col items-center gap-6 text-lg">
-          <li><Link href="#" onClick={() => setOpen(false)}>Men</Link></li>
-          <li><Link href="#" onClick={() => setOpen(false)}>Women</Link></li>
-          <li><Link href="#" onClick={() => setOpen(false)}>Child</Link></li>
-          <li><Link href="#" onClick={() => setOpen(false)}>Toy</Link></li>
-          <li><Link href="#" onClick={() => setOpen(false)}>Other</Link></li>
+        <ul className="flex flex-col gap-1 p-4 text-base font-medium">
+
+          <li>
+            <Link
+              href="/men"
+              onClick={() => setOpen(false)}
+              className="
+                block rounded-xl
+                px-4 py-3
+                transition
+                hover:bg-pink-50
+                hover:text-pink-600
+              "
+            >
+              Men
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/women"
+              onClick={() => setOpen(false)}
+              className="
+                block rounded-xl
+                px-4 py-3
+                transition
+                hover:bg-pink-50
+                hover:text-pink-600
+              "
+            >
+              Women
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/child"
+              onClick={() => setOpen(false)}
+              className="
+                block rounded-xl
+                px-4 py-3
+                transition
+                hover:bg-pink-50
+                hover:text-pink-600
+              "
+            >
+              Child
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/toy"
+              onClick={() => setOpen(false)}
+              className="
+                block rounded-xl
+                px-4 py-3
+                transition
+                hover:bg-pink-50
+                hover:text-pink-600
+              "
+            >
+              Toy
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href="/other"
+              onClick={() => setOpen(false)}
+              className="
+                block rounded-xl
+                px-4 py-3
+                transition
+                hover:bg-pink-50
+                hover:text-pink-600
+              "
+            >
+              Other
+            </Link>
+          </li>
+
         </ul>
+
+        {/* BOTTOM CARD */}
+        <div className="absolute bottom-0 w-full border-t p-4">
+
+          <div className="rounded-2xl bg-pink-50 p-4">
+
+            <h3 className="font-semibold text-pink-600">
+              Welcome to Sale BD
+            </h3>
+
+            <p className="mt-1 text-sm text-gray-600">
+              Best ecommerce platform in Bangladesh.
+            </p>
+
+          </div>
+        </div>
+
       </aside>
     </>
   );

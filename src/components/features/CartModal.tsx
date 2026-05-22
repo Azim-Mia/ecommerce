@@ -1,244 +1,173 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ShoppingCart, X, Trash2, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { Plus, Minus, ShoppingBag, Trash2, X } from "lucide-react";
 
 const CartModal = () => {
   const [open, setOpen] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Wireless Headphone",
-      price: 2500,
-      quantity: 1,
-      image: "/images/products/product_1.jpeg",
-    },
-    {
-      id: 2,
-      name: "Smart Watch",
-      price: 4500,
-      quantity: 2,
-      image: "/images/products/product_2.jpeg",
-    },
-    {
-      id: 3,
-      name: "Smart Watch",
-      price: 4500,
-      quantity: 2,
-      image: "/images/products/product_2.jpeg",
-    },
-    {
-      id: 4,
-      name: "Smart Watch",
-      price: 4500,
-      quantity: 2,
-      image: "/images/products/product_2.jpeg",
-    },
-  ]);
-
-  const cartRef = useRef<HTMLDivElement>(null);
-
-  // outside click close
+  // Close on outside click
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (cartRef.current && !cartRef.current.contains(e.target as Node)) {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
         setOpen(false);
       }
     };
 
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
-  // increase qty
-  const increaseQty = (id: number) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-  };
-
-  // decrease qty
-  const decreaseQty = (id: number) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
-          : item
-      )
-    );
-  };
-
-  // remove item
-  const removeItem = (id: number) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
-  };
-
-  // total price
-  const total = useMemo(
-    () =>
-      cartItems.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0
-      ),
-    [cartItems]
-  );
-
-  // total items
-  const totalItems = useMemo(
-    () => cartItems.reduce((acc, item) => acc + item.quantity, 0),
-    [cartItems]
-  );
-
   return (
-    <div ref={cartRef} className="relative">
+    <div ref={modalRef} className="relative">
       {/* CART BUTTON */}
       <button
         onClick={() => setOpen(!open)}
-        className="group relative rounded-full p-2.5 transition hover:bg-pink-100"
+        className="relative rounded-full border border-gray-200 bg-white p-2.5 shadow-sm transition hover:shadow-md"
       >
-           <Image
-                  src={"/images/icons/cart_2.png"}
-                  alt="cart"
-                  width={30}
-                  height={30}
-                  className="transition-transform duration-300 group-hover:scale-110"
-                />
+        <ShoppingCart size={26} className="text-gray-700" />
 
-        <span className="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-pink-500 text-[10px] font-bold text-white">
-          {totalItems}
+        {/* BADGE */}
+        <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-pink-600 text-[11px] font-semibold text-white shadow">
+          2
         </span>
       </button>
 
-      {/* OVERLAY */}
+      {/* BACKDROP (mobile UX improvement) */}
       {open && (
-        <div className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden" />
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-40 bg-black/20 sm:hidden"
+        />
       )}
 
       {/* MODAL */}
       <div
-        className={`p-4
-          fixed right-0 top-0 z-50 flex h-[30rem] w-full flex-col bg-white transition-all duration-300
-
-          md:absolute md:top-14 md:right-0
-          md:h-[30rem] md:w-[420px]
-          md:rounded-3xl md:border md:border-gray-100 md:shadow-xl
-          md:flex md:flex-col
-
-          ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 md:translate-y-4"}
-          ${open ? "visible" : "invisible"}
-        `}
+        className={`fixed right-2 top-16 z-50 
+        w-[92vw] sm:w-[380px] 
+        max-w-[380px]
+        overflow-hidden rounded-3xl border border-gray-200 bg-white 
+        shadow-[0_20px_60px_rgba(0,0,0,0.18)]
+        transition-all duration-300
+        ${
+          open
+            ? "visible translate-y-0 scale-100 opacity-100"
+            : "invisible -translate-y-3 scale-95 opacity-0"
+        }`}
       >
         {/* HEADER */}
-        <div className="shrink-0 flex items-center justify-between border-b bg-white px-5 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-pink-100">
-              <ShoppingBag className="text-pink-500" size={22} />
-            </div>
-
-            <div>
-              <h2 className="text-lg font-bold text-gray-800">
-                Shopping Cart
-              </h2>
-              <p className="text-sm text-gray-500">
-                {totalItems} Items
-              </p>
-            </div>
+        <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
+          <div>
+            <h3 className="text-lg font-bold text-gray-800">
+              Shopping Cart
+            </h3>
+            <p className="text-sm text-gray-500">2 Items Added</p>
           </div>
 
-          <button onClick={() => setOpen(false)}>
-            <X size={20} />
+          <button
+            onClick={() => setOpen(false)}
+            className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-gray-100"
+          >
+            <X size={18} />
           </button>
         </div>
 
-        {/* ITEMS (ONLY SCROLL AREA) */}
-        <div className="flex-1 overflow-y-auto space-y-4 p-4">
-           
-     {cartItems.length === 0 && (
-  <span className="flex items-center justify-center text-2xl md:text-5xl font-semibold py-10">
-    Product is empty
-  </span>
-)}
-          {cartItems.map((item) => (
-            <div
-              key={item.id}
-              className="flex gap-4 rounded-2xl border p-3 hover:shadow-lg"
-            >
-              {/* IMAGE */}
-              <div className="relative h-24 w-24 overflow-hidden rounded-xl bg-gray-100">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover"
-                />
+        {/* PRODUCTS */}
+        <div className="max-h-[350px] space-y-4 overflow-y-auto p-5">
+          
+          {/* ITEM 1 */}
+          <div className="flex gap-4 rounded-2xl border border-gray-100 p-3 transition hover:border-pink-200 hover:bg-pink-50/40">
+            <div className="relative h-20 w-20 overflow-hidden rounded-2xl bg-gray-100">
+              <Image
+                src="/images/products/product_1.jpeg"
+                alt="Premium T-Shirt"
+                fill
+                sizes="80px"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="flex flex-1 flex-col justify-between">
+              <div>
+                <h4 className="text-sm font-semibold text-gray-800">
+                  Premium T-Shirt
+                </h4>
+                <p className="mt-1 text-xs text-gray-500">
+                  Size: M • Qty: 1
+                </p>
               </div>
 
-              {/* INFO */}
-              <div className="flex flex-1 flex-col justify-between">
-                <div className="flex justify-between">
-                  <div>
-                    <h3 className="text-sm font-semibold">
-                      {item.name}
-                    </h3>
-                    <p className="font-bold text-pink-500">
-                      ৳ {item.price.toLocaleString()}
-                    </p>
-                  </div>
+              <div className="flex items-center justify-between">
+                <span className="text-base font-bold text-pink-600">
+                  $25
+                </span>
 
-                  <button
-                    onClick={() => removeItem(item.id)}
-                    className="text-gray-400 hover:text-red-500"
-                  >
-                    <Trash2 size={18} />
-                  </button>
-                </div>
-
-                {/* QUANTITY */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 rounded-full border px-2 py-1">
-                    <button onClick={() => decreaseQty(item.id)}>
-                      <Minus size={14} />
-                    </button>
-
-                    <span>{item.quantity}</span>
-
-                    <button onClick={() => increaseQty(item.id)}>
-                      <Plus size={14} />
-                    </button>
-                  </div>
-
-                  <p className="font-semibold">
-                    ৳{" "}
-                    {(
-                      item.price * item.quantity
-                    ).toLocaleString()}
-                  </p>
-                </div>
+                <button className="rounded-full p-2 text-gray-400 hover:bg-red-100 hover:text-red-500">
+                  <Trash2 size={16} />
+                </button>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* ITEM 2 */}
+          <div className="flex gap-4 rounded-2xl border border-gray-100 p-3 transition hover:border-pink-200 hover:bg-pink-50/40">
+            <div className="relative h-20 w-20 overflow-hidden rounded-2xl bg-gray-100">
+              <Image
+                src="/images/products/product_2.jpeg"
+                alt="Sneakers"
+                fill
+                sizes="80px"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="flex flex-1 flex-col justify-between">
+              <div>
+                <h4 className="text-sm font-semibold text-gray-800">
+                  Casual Sneakers
+                </h4>
+                <p className="mt-1 text-xs text-gray-500">
+                  Size: 42 • Qty: 1
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <span className="text-base font-bold text-pink-600">
+                  $40
+                </span>
+
+                <button className="rounded-full p-2 text-gray-400 hover:bg-red-100 hover:text-red-500">
+                  <Trash2 size={16} />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* FOOTER (ALWAYS VISIBLE) */}
-        <div className="shrink-0 border-t bg-white p-5">
-          <div className="mb-3 flex justify-between">
-            <span>Total</span>
-            <span className="text-xl font-bold text-pink-500">
-              ৳ {total.toLocaleString()}
+        {/* FOOTER */}
+        <div className="border-t border-gray-100 p-5">
+          <div className="mb-5 flex items-center justify-between">
+            <span className="text-sm font-medium text-gray-500">
+              Total Amount
+            </span>
+            <span className="text-2xl font-bold text-pink-600">
+              $65
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <button className="rounded-xl border border-pink-500 py-2 text-pink-500">
+          <div className="flex gap-3">
+            <button className="flex-1 rounded-2xl border border-gray-200 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100">
               View Cart
             </button>
 
-            <button className="rounded-xl bg-pink-500 py-2 text-white">
+            <button className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-pink-600 py-3 text-sm font-semibold text-white hover:bg-pink-700">
               Checkout
+              <ArrowRight size={16} />
             </button>
           </div>
         </div>
