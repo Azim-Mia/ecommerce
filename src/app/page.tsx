@@ -6,7 +6,8 @@ export default async function HomePage() {
   const products = await getProducts();
 
   return ( <>
- hello home page
+<div className="w-full"><ProductSlider /></div>
+<div className=""><DisplayProducts data={products}></DisplayProducts> </div>
     </>
   );
 }
