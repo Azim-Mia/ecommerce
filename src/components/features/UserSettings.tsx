@@ -1,5 +1,5 @@
 'use client';
-
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
   User,
@@ -105,10 +105,10 @@ const UserSettings = () => {
             Orders
           </button>
 
-          <button className="flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-100">
+          <Link href="/account" className="flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-100">
             <Settings size={19} />
-            Settings
-          </button>
+              <span>Account</span>
+          </Link>
 
           {/* DIVIDER */}
           <div className="my-2 border-t border-gray-100" />
