@@ -91,13 +91,6 @@ export default function AccountCenter() {
             <MenuItem tab="notifications" active={tab} setTab={setTab}>
               <Settings size={16} /> Notifications
             </MenuItem>
-
-            <GroupLabel className="mt-4 text-red-500">Danger</GroupLabel>
-
-            <MenuItem tab="delete" active={tab} setTab={setTab} danger>
-              <Trash2 size={16} /> Delete Account
-            </MenuItem>
-
             <button className="mt-6 w-full flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-black">
               <LogOut size={16} />
               Sign Out

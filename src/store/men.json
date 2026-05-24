@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Men's Casual T-Shirt",
+    "price": 850,
+    "category": "Men",
+    "brand": "Puma",
+    "stock": 25,
+    "rating": 4.1,
+    "thumbnail": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    "description": "Comfortable cotton t-shirt for men."
+  },
+  {
+    "id": 2,
+    "title": "Men's Denim Jacket",
+    "price": 2200,
+    "category": "Men",
+    "brand": "Levis",
+    "stock": 8,
+    "rating": 4.6,
+    "thumbnail": "https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef",
+    "description": "Premium denim jacket with modern fit."
+  },
+  {
+    "id": 3,
+    "title": "Men's Formal Shoes",
+    "price": 3200,
+    "category": "Men",
+    "brand": "Bata",
+    "stock": 9,
+    "rating": 4.4,
+    "thumbnail": "https://images.unsplash.com/photo-1549298916-b41d501d3772",
+    "description": "Elegant formal shoes for office and events."
+  },
+  {
+    "id": 4,
+    "title": "Men's Hoodie",
+    "price": 1800,
+    "category": "Men",
+    "brand": "H&M",
+    "stock": 11,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1556821840-3a63f95609a7",
+    "description": "Warm and stylish hoodie for winter season."
+  },
+  {
+    "id": 5,
+    "title": "Men's Polo Shirt",
+    "price": 1400,
+    "category": "Men",
+    "brand": "Lacoste",
+    "stock": 13,
+    "rating": 4.7,
+    "thumbnail": "https://images.unsplash.com/photo-1581655353564-df123a1eb820",
+    "description": "Premium polo shirt with soft fabric."
+  },
+  {
+    "id": 6,
+    "title": "Men's Jeans Pant",
+    "price": 2600,
+    "category": "Men",
+    "brand": "Levis",
+    "stock": 10,
+    "rating": 4.6,
+    "thumbnail": "https://images.unsplash.com/photo-1542272454315-1c7d8f7a4e6f",
+    "description": "Stylish slim-fit jeans pant for men."
+  },
+  {
+    "id": 7,
+    "title": "Men's Wrist Watch",
+    "price": 4500,
+    "category": "Men",
+    "brand": "Casio",
+    "stock": 6,
+    "rating": 4.8,
+    "thumbnail": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49",
+    "description": "Luxury wrist watch with modern design."
+  },
+  {
+    "id": 8,
+    "title": "Men's Sunglasses",
+    "price": 1200,
+    "category": "Men",
+    "brand": "RayBan",
+    "stock": 18,
+    "rating": 4.3,
+    "thumbnail": "https://images.unsplash.com/photo-1511499767150-a48a237f0083",
+    "description": "UV protected stylish sunglasses for men."
+  },
+  {
+    "id": 9,
+    "title": "Men's Sneakers",
+    "price": 3500,
+    "category": "Men",
+    "brand": "Nike",
+    "stock": 9,
+    "rating": 4.7,
+    "thumbnail": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    "description": "Comfortable sneakers for sports and casual use."
+  },
+  {
+    "id": 10,
+    "title": "Men's Leather Wallet",
+    "price": 950,
+    "category": "Men",
+    "brand": "WildHorn",
+    "stock": 20,
+    "rating": 4.4,
+    "thumbnail": "https://images.unsplash.com/photo-1627123424574-724758594e93",
+    "description": "Premium leather wallet with multiple card slots."
+  }
+]

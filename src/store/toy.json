@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Kids Toy Car",
+    "price": 950,
+    "category": "Toy",
+    "brand": "Hot Wheels",
+    "stock": 30,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1511512578047-dfb367046420",
+    "description": "Mini racing toy car for children."
+  },
+  {
+    "id": 2,
+    "title": "Teddy Bear",
+    "price": 700,
+    "category": "Toy",
+    "brand": "Baby Toys",
+    "stock": 22,
+    "rating": 4.3,
+    "thumbnail": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "description": "Soft and cute teddy bear for kids."
+  },
+  {
+    "id": 3,
+    "title": "Remote Control Helicopter",
+    "price": 2800,
+    "category": "Toy",
+    "brand": "ToyFly",
+    "stock": 6,
+    "rating": 4.7,
+    "thumbnail": "https://images.unsplash.com/photo-1508614589041-895b88991e3e",
+    "description": "Flying helicopter toy with remote control."
+  },
+  {
+    "id": 4,
+    "title": "Puzzle Board Game",
+    "price": 1200,
+    "category": "Toy",
+    "brand": "FunKids",
+    "stock": 17,
+    "rating": 4.4,
+    "thumbnail": "https://images.unsplash.com/photo-1587654780291-39c9404d746b",
+    "description": "Educational puzzle game for kids and family."
+  },
+  {
+    "id": 5,
+    "title": "Building Blocks Set",
+    "price": 1900,
+    "category": "Toy",
+    "brand": "Lego",
+    "stock": 12,
+    "rating": 4.8,
+    "thumbnail": "https://images.unsplash.com/photo-1587654780291-39c9404d746b",
+    "description": "Creative building block toy set for children."
+  },
+  {
+    "id": 6,
+    "title": "Toy Kitchen Set",
+    "price": 2400,
+    "category": "Toy",
+    "brand": "Kids World",
+    "stock": 8,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1516627145497-ae6968895b74",
+    "description": "Fun toy kitchen play set for kids."
+  },
+  {
+    "id": 7,
+    "title": "Dinosaur Toy",
+    "price": 850,
+    "category": "Toy",
+    "brand": "DinoFun",
+    "stock": 20,
+    "rating": 4.2,
+    "thumbnail": "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088",
+    "description": "Realistic dinosaur toy for children."
+  },
+  {
+    "id": 8,
+    "title": "Toy Train Set",
+    "price": 2600,
+    "category": "Toy",
+    "brand": "TrainMaster",
+    "stock": 7,
+    "rating": 4.6,
+    "thumbnail": "https://images.unsplash.com/photo-1518546305927-5a555bb7020d",
+    "description": "Electric toy train set with tracks."
+  },
+  {
+    "id": 9,
+    "title": "Barbie Doll",
+    "price": 1450,
+    "category": "Toy",
+    "brand": "Barbie",
+    "stock": 16,
+    "rating": 4.7,
+    "thumbnail": "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
+    "description": "Fashion doll with stylish accessories."
+  },
+  {
+    "id": 10,
+    "title": "Toy Basketball Set",
+    "price": 1700,
+    "category": "Toy",
+    "brand": "SportKids",
+    "stock": 11,
+    "rating": 4.4,
+    "thumbnail": "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+    "description": "Indoor mini basketball game set for children."
+  }
+]

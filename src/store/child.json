@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Baby Dress Set",
+    "price": 1100,
+    "category": "Child",
+    "brand": "BabyCare",
+    "stock": 14,
+    "rating": 4.4,
+    "thumbnail": "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea",
+    "description": "Comfortable baby dress set with soft fabric."
+  },
+  {
+    "id": 2,
+    "title": "Children School Bag",
+    "price": 1300,
+    "category": "Child",
+    "brand": "SkyBag",
+    "stock": 16,
+    "rating": 4.2,
+    "thumbnail": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9",
+    "description": "Durable school backpack for children."
+  },
+  {
+    "id": 3,
+    "title": "Kids Sandals",
+    "price": 900,
+    "category": "Child",
+    "brand": "Bata",
+    "stock": 20,
+    "rating": 4.1,
+    "thumbnail": "https://images.unsplash.com/photo-1514989940723-e8e51635b782",
+    "description": "Comfortable sandals for children daily use."
+  },
+  {
+    "id": 4,
+    "title": "Baby Feeding Bottle",
+    "price": 650,
+    "category": "Child",
+    "brand": "Johnson",
+    "stock": 28,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4",
+    "description": "Safe feeding bottle for babies."
+  },
+  {
+    "id": 5,
+    "title": "Kids Winter Jacket",
+    "price": 2100,
+    "category": "Child",
+    "brand": "H&M Kids",
+    "stock": 11,
+    "rating": 4.6,
+    "thumbnail": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f",
+    "description": "Warm winter jacket for children."
+  },
+  {
+    "id": 6,
+    "title": "Children Water Bottle",
+    "price": 500,
+    "category": "Child",
+    "brand": "Miniso",
+    "stock": 24,
+    "rating": 4.3,
+    "thumbnail": "https://images.unsplash.com/photo-1602143407151-7111542de6e8",
+    "description": "Colorful reusable water bottle for kids."
+  },
+  {
+    "id": 7,
+    "title": "Kids Cartoon T-Shirt",
+    "price": 750,
+    "category": "Child",
+    "brand": "Baby Shop",
+    "stock": 19,
+    "rating": 4.4,
+    "thumbnail": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    "description": "Soft cartoon printed t-shirt for children."
+  },
+  {
+    "id": 8,
+    "title": "Children Study Table",
+    "price": 3500,
+    "category": "Child",
+    "brand": "KidsHome",
+    "stock": 6,
+    "rating": 4.7,
+    "thumbnail": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+    "description": "Comfortable study table for kids learning."
+  },
+  {
+    "id": 9,
+    "title": "Kids Sports Shoes",
+    "price": 1700,
+    "category": "Child",
+    "brand": "Nike Kids",
+    "stock": 10,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    "description": "Comfortable sports shoes for active children."
+  },
+  {
+    "id": 10,
+    "title": "Baby Blanket",
+    "price": 950,
+    "category": "Child",
+    "brand": "BabySoft",
+    "stock": 15,
+    "rating": 4.6,
+    "thumbnail": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "description": "Soft and warm blanket for babies."
+  }
+]

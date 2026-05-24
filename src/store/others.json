@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Bluetooth Speaker",
+    "price": 2100,
+    "category": "Other",
+    "brand": "JBL",
+    "stock": 19,
+    "rating": 4.6,
+    "thumbnail": "https://images.unsplash.com/photo-1507878866276-a947ef722fee",
+    "description": "Portable bluetooth speaker with deep bass."
+  },
+  {
+    "id": 2,
+    "title": "Fitness Dumbbell Set",
+    "price": 3200,
+    "category": "Other",
+    "brand": "PowerFit",
+    "stock": 11,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+    "description": "Heavy duty dumbbell set for home workout."
+  },
+  {
+    "id": 3,
+    "title": "Yoga Mat",
+    "price": 1200,
+    "category": "Other",
+    "brand": "FitLife",
+    "stock": 18,
+    "rating": 4.4,
+    "thumbnail": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f",
+    "description": "Comfortable anti-slip yoga mat for exercise."
+  },
+  {
+    "id": 4,
+    "title": "Water Bottle",
+    "price": 550,
+    "category": "Other",
+    "brand": "Miniso",
+    "stock": 25,
+    "rating": 4.3,
+    "thumbnail": "https://images.unsplash.com/photo-1602143407151-7111542de6e8",
+    "description": "Reusable travel water bottle for daily use."
+  },
+  {
+    "id": 5,
+    "title": "LED Desk Lamp",
+    "price": 1500,
+    "category": "Other",
+    "brand": "Philips",
+    "stock": 14,
+    "rating": 4.7,
+    "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c",
+    "description": "Modern LED desk lamp with adjustable brightness."
+  },
+  {
+    "id": 6,
+    "title": "Power Bank 20000mAh",
+    "price": 2200,
+    "category": "Other",
+    "brand": "Xiaomi",
+    "stock": 12,
+    "rating": 4.6,
+    "thumbnail": "https://images.unsplash.com/photo-1609592806596-4d3b8f8d6b62",
+    "description": "Fast charging portable power bank."
+  },
+  {
+    "id": 7,
+    "title": "Smart LED Bulb",
+    "price": 900,
+    "category": "Other",
+    "brand": "TP-Link",
+    "stock": 20,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    "description": "Smart controllable LED bulb with app support."
+  },
+  {
+    "id": 8,
+    "title": "Wall Clock",
+    "price": 1300,
+    "category": "Other",
+    "brand": "Casio",
+    "stock": 10,
+    "rating": 4.4,
+    "thumbnail": "https://images.unsplash.com/photo-1504198453319-5ce911bafcde",
+    "description": "Modern decorative wall clock for home."
+  },
+  {
+    "id": 9,
+    "title": "Laptop Cooling Pad",
+    "price": 1800,
+    "category": "Other",
+    "brand": "DeepCool",
+    "stock": 9,
+    "rating": 4.5,
+    "thumbnail": "https://images.unsplash.com/photo-1587829741301-dc798b83add3",
+    "description": "Cooling pad for laptop heat control."
+  },
+  {
+    "id": 10,
+    "title": "Extension Board",
+    "price": 800,
+    "category": "Other",
+    "brand": "Orbit",
+    "stock": 22,
+    "rating": 4.3,
+    "thumbnail": "https://images.unsplash.com/photo-1581093458791-9d42f6c8c0a5",
+    "description": "Multi socket extension board for home use."
+  }
+]
