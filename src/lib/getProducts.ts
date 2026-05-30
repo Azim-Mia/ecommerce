@@ -1,10 +1,9 @@
-// getProducts.ts
-
-import products from "../store/productsData/products.json";
-import women from "../store/productsData/women.json";
-import men from "../store/productsData/men.json";
-import toy from "../store/productsData/toy.json";
-import others from "../store/productsData/others.json";
+import products from "@/store/productsData/products.json";
+import men from "@/store/productsData/men.json";
+import women from "@/store/productsData/women.json";
+import child from "@/store/productsData/child.json";
+import toy from "@/store/productsData/toy.json";
+import others from "@/store/productsData/others.json";
 
 export interface Product {
   id: number;
@@ -18,9 +17,24 @@ export interface Product {
   description: string;
 }
 
+type ProductsData = {
+  products: Product[];
+  men: Product[];
+  women: Product[];
+  child: Product[];
+  toy: Product[];
+  others: Product[];
+};
 
-const getProducts = (): Product[] => {
-  return {products, men, women, toy, others };
+const getProducts = (): ProductsData => {
+  return {
+    products,
+    men,
+    women,
+    child,
+    toy,
+    others,
+  };
 };
 
 export default getProducts;
