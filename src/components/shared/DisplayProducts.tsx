@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type Product = {
-  productId: number;
+  productId: string;
   title: string;
   price: number;
   category: string;
