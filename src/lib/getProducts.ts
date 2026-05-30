@@ -6,7 +6,7 @@ import toy from "@/store/productsData/toy.json";
 import others from "@/store/productsData/others.json";
 
 export interface Product {
-  id: number;
+  productId: string;
   title: string;
   price: number;
   category: string;
