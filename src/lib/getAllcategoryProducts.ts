@@ -1,4 +1,4 @@
-// getProducts.ts
+// lib/getProducts.ts
 
 import products from "../store/productsData/products.json";
 import women from "../store/productsData/women.json";
@@ -7,7 +7,7 @@ import toy from "../store/productsData/toy.json";
 import others from "../store/productsData/others.json";
 
 export interface Product {
-  id: number;
+  productId: string;
   title: string;
   price: number;
   category: string;
@@ -18,9 +18,19 @@ export interface Product {
   description: string;
 }
 
+/**
+ * Get all products (merged database style)
+ */
+const getAllcategoryProducts = async (): Promise<Product[]> => {
+  const allProducts: Product[] = [
+    ...products,
+    ...men,
+    ...women,
+    ...toy,
+    ...others,
+  ];
 
-const getProducts = (): Product[] => {
-  return {products, men, women, toy, others };
+  return allProducts;
 };
 
-export default getProducts;
+export default getAllcategoryProducts

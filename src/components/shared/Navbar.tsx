@@ -5,21 +5,18 @@ import Link from "next/link";
 
 import {
   Menu,
-  X,
-  Search,
+  X
 } from "lucide-react";
 
 /* =========================
    COMPONENTS
 ========================= */
 import Notification from "../features/Notification";
-import CartModal from "../features/CartModal";
+import CartModal from "../features/CartModule";
 import UserSettings from "../features/UserSettings";
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
-  return (
+return (
     <>
       {/* =========================
           NAVBAR
@@ -118,16 +115,6 @@ const Navbar = () => {
             RIGHT SIDE
         ========================= */}
         <div className="flex items-center gap-1 sm:gap-2">
-
-          {/* SEARCH */}
-          <button
-            className="
-              rounded-full p-2
-              transition hover:bg-gray-100
-            "
-            aria-label="Search"
-          >
-          </button>
 
           {/* NOTIFICATION */}
           <Notification />

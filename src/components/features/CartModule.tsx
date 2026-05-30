@@ -1,27 +1,16 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ShoppingCart, X, Trash2, ArrowRight } from "lucide-react";
 import Image from "next/image";
-
+import useOutsideClick from "@/hooks/useOutsideClick";
 const CartModal = () => {
   const [open, setOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
-  // Close on outside click
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
-  }, []);
+  useOutsideClick(modalRef, () => {
+  setOpen(false);
+});
 
   return (
     <div ref={modalRef} className="relative">

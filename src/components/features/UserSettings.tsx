@@ -90,10 +90,12 @@ const UserSettings = () => {
         {/* MENU */}
         <div className="space-y-1 p-3">
 
+          <Link href={'/profile'}>
           <button className="flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-100">
             <User size={19} />
             My Profile
           </button>
+          </Link>
 
           <button className="flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-100">
             <Heart size={19} />
@@ -112,11 +114,12 @@ const UserSettings = () => {
 
           {/* DIVIDER */}
           <div className="my-2 border-t border-gray-100" />
-
-          <button className="flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-sm font-medium text-red-500 transition-all duration-200 hover:bg-red-50">
+          <Link href={"/logout"}>
+           <button className="flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-sm font-medium text-red-500 transition-all duration-200 hover:bg-red-50">
             <LogOut size={19} />
             Logout
           </button>
+          </Link>
         </div>
       </div>
     </div>

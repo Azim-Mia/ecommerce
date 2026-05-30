@@ -1,9 +1,10 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 
 type Product = {
-  id: number;
+  productId: number;
   title: string;
   price: number;
   category: string;
@@ -34,89 +35,96 @@ const Products = ({ data }: ProductsProps) => {
       </div>
 
       {/* GRID */}
-      <div className="
-        min-w-full
-        grid 
-        grid-cols-1 
-        gap-5 
-        sm:grid-cols-2 
-        md:grid-cols-2 
-        lg:grid-cols-3 
-        xl:grid-cols-4 
-        2xl:grid-cols-5
-      ">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 
         {data.map((product) => (
+          
           <div
-            key={product.id}
+            key={product.productId}
             className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
           >
 
-            {/* IMAGE */}
-            <div className="relative h-52 w-full overflow-hidden bg-gray-100 sm:h-56 md:h-60 lg:h-64">
+            {/* CLICKABLE AREA */}
+            <Link href={`/products/${product.productId}`} className="block">
 
-              <Image
-                src={product.thumbnail}
-                fill
-                sizes="(max-width: 640px) 100vw, 
-                       (max-width: 1024px) 50vw, 
-                       (max-width: 1280px) 33vw, 
-                       25vw"
-                      alt={product.title}
-                className="object-cover transition duration-500 group-hover:scale-110"
-              />
+              {/* IMAGE */}
+              <div className="relative h-52 w-full overflow-hidden bg-gray-100 sm:h-56 md:h-60 lg:h-64">
 
-              {/* CATEGORY */}
-              <span className="absolute left-2 top-2 rounded-full bg-indigo-600 px-2 py-1 text-[10px] font-semibold text-white sm:left-3 sm:top-3 sm:text-xs">
-                {product.category}
-              </span>
+                <Image
+                  src={product.thumbnail}
+                  fill
+                  sizes="
+                    (max-width: 640px) 100vw,
+                    (max-width: 1024px) 50vw,
+                    (max-width: 1280px) 33vw,
+                    25vw
+                  "
+                  alt={product.title}
+                  className="object-cover transition duration-500 group-hover:scale-110"
+                />
 
-              {/* RATING */}
-              <div className="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-1 text-[10px] font-bold text-yellow-500 shadow sm:right-3 sm:top-3 sm:text-xs">
-                ⭐ {product.rating}
-              </div>
+                {/* CATEGORY */}
+                <span className="absolute left-2 top-2 rounded-full bg-indigo-600 px-2 py-1 text-[10px] font-semibold text-white sm:left-3 sm:top-3 sm:text-xs">
+                  {product.category}
+                </span>
 
-            </div>
-
-            {/* CONTENT */}
-            <div className="flex flex-1 flex-col p-4 sm:p-5">
-
-              <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400 sm:text-xs">
-                {product.brand}
-              </p>
-
-              <h2 className="mt-1 line-clamp-1 text-base font-bold text-gray-800 sm:text-lg md:text-xl">
-                {product.title}
-              </h2>
-
-              <p className="mt-1 line-clamp-2 text-xs text-gray-500 sm:text-sm">
-                {product.description}
-              </p>
-
-              {/* BOTTOM */}
-              <div className="mt-auto flex items-center justify-between pt-4">
-
-                <div>
-                  <p className="text-lg font-extrabold text-indigo-600 sm:text-xl md:text-2xl">
-                    ৳ {product.price}
-                  </p>
-
-                  <p className={`text-[10px] sm:text-xs font-medium ${
-                    product.stock > 0 ? "text-green-600" : "text-red-500"
-                  }`}>
-                    {product.stock > 0
-                      ? `${product.stock} In Stock`
-                      : "Out of Stock"}
-                  </p>
+                {/* RATING */}
+                <div className="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-1 text-[10px] font-bold text-yellow-500 shadow sm:right-3 sm:top-3 sm:text-xs">
+                  ⭐ {product.rating}
                 </div>
 
-                <button className="rounded-lg bg-indigo-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-indigo-700 sm:px-4 sm:text-sm">
-                  Buy
-                </button>
+              </div>
+
+              {/* CONTENT */}
+              <div className="flex flex-1 flex-col p-4 sm:p-5">
+
+                <p className="text-[10px] font-medium uppercase tracking-wider text-gray-400 sm:text-xs">
+                  {product.brand}
+                </p>
+
+                <h2 className="mt-1 line-clamp-1 text-base font-bold text-gray-800 sm:text-lg md:text-xl">
+                  {product.title}
+                </h2>
+
+                <p className="mt-1 line-clamp-2 text-xs text-gray-500 sm:text-sm">
+                  {product.description}
+                </p>
 
               </div>
 
+            </Link>
+
+            {/* BOTTOM ACTIONS */}
+            <div className="mt-auto flex items-center justify-between p-4 pt-0 sm:p-5">
+
+              <div>
+                <p className="text-lg font-extrabold text-indigo-600 sm:text-xl md:text-2xl">
+                  ৳ {product.price}
+                </p>
+
+                <p className={`text-[10px] sm:text-xs font-medium ${
+                  product.stock > 0 ? "text-green-600" : "text-red-500"
+                }`}>
+                  {product.stock > 0
+                    ? `${product.stock} In Stock`
+                    : "Out of Stock"}
+                </p>
+              </div>
+
+              {/* BUY BUTTON */}
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  alert(`Buying product ${product.productId}`);
+                }}
+                className="rounded-lg bg-indigo-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-indigo-700 sm:px-4 sm:text-sm"
+              >
+                Buy
+              </button>
+
             </div>
+
           </div>
         ))}
 

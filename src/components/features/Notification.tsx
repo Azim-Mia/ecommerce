@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Bell, CheckCheck, X } from "lucide-react";
-
 const Notification = () => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
